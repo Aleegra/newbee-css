@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>card</title>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #0f0f0f;
+        overflow: hidden;
+    }
+    .container{
+        position: relative;
+        width: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .card{
+        position: absolute;
+        width:240px;
+        height:360px;
+        background-color: #5e5cfc;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(0,0,0,0);
+        font-size: 2em;
+        font-weight: 700;
+        border: 10px solid rgba(0, 0, 0, .1);
+        transition: .5s;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, .1);
+        overflow: hidden;
+    }
+    .container:hover .card{
+        transform:translate(calc(var(--i)*100px));
+        box-shadow: 0 15px 50px rgba(0, 0, 0, .25);
+        color: rgb(0,0,0,.35);
+        cursor: pointer;
+    }
+    .container:active .card:not(:active){
+        background-color: #333;
+    }
+    .container .card:active{
+        translate: 0px -70px;
+        border: 0px rgba(0, 0, 0, 0);
+        z-index:999;
+    }
+    .container .card:active::before{
+        content: '';
+        width:200%;
+        height: 200%;
+        background-color:#5e5cfc;
+        position: absolute;
+        left:-50%;
+        top:-50%;
+        background-image: conic-gradient(
+            transparent,#f5f4c8,transparent 50%
+        );
+        z-index: -2;
+        animation: rotate 5s linear infinite;
+    }
+    @keyframes rotate{
+        to{
+            transform: rotate(360deg);
+        }
+    }
+    .container .card:active::after{
+        content: '';
+        position: absolute;
+        inset:1vmin;
+        background-color:#9795f8;
+        border-radius: 8px;
+        z-index: -1;
+    }
+   
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" style="--i:-4;">One</div>
+        <div class="card" style="--i:-3;">Two</div>
+        <div class="card" style="--i:-2;">Three</div>
+        <div class="card" style="--i:-1;">Four</div>
+        <div class="card" style="--i:0;">Five</div>
+        <div class="card" style="--i:1;">Six</div>
+        <div class="card" style="--i:2;">Seven</div>
+        <div class="card" style="--i:3;">Eight</div>
+        <div class="card" style="--i:4;">Night</div>
+
+    </div>
+</body>
+</html>
