@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rolling</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins',sans-serif;
+        }
+        body{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #111;
+        }
+        .container{
+            position: relative;
+            display: flex;
+            width: 80vh;
+            overflow: hidden;
+            mask-image: linear-gradient(
+                90deg, transparent,#fff 20%,#fff 80%,transparent
+            );
+        }
+        
+        .container .group{
+            animation: animate var(--t) linear infinite;
+        }
+        .container .group:nth-child(2){
+            animation: animate2 var(--t) linear infinite;
+            animation-delay: calc(var(--t)/-2);
+        }
+      
+        
+        @keyframes animate{
+            from{
+                transform: translate(100%);
+            }
+            to{
+                transform: translate(-100%);
+            }
+        }
+        @keyframes animate2{
+            from{
+                transform: translate(0);
+            }
+            to{
+                transform: translate(-200%);
+            }
+        }
+        .group{
+            display: flex;
+        }
+    
+        .card{       
+            margin: 10px;
+            width: 320px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, .12);
+        }
+        .image{
+            height: 200px;
+        }
+        .image img{
+            display: block;
+            width: 100%;
+            height: inherit;
+            object-fit: cover;
+        }
+        .content{
+            padding: 2rem 1.8rem;
+        }
+        h4{
+            margin: 0 0 1rem;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+        .des{
+            font-size: 0.8rem;
+            font-family: "Poppins",sans-serif;
+            line-height: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="--t:20s">
+        <div class="group">
+            <div class="card">
+                <div class="image">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h4>What is Clean Architecture?</h4>
+                    <div class="des">
+                        Clean Architecture promotes the idea of modular, testable, and maintainable code. It emphasizes separating concerns and defining clear boundaries between system components. 
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h4>What is Platform Engineering?</h4>
+                    <div class="des">
+                        Platform engineering brings self-service capabilities and automated infrastructure operations to improve the developer experience and reduce complexity. 
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h4>5 API Performance Strategies</h4>
+                    <div class="des">
+                        This post discusses 5 strategies for improving API performance, including caching, load balancing, async processing, pagination, and connection pooling.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <div class="card">
+                <div class="image">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h4>What is Clean Architecture?</h4>
+                    <div class="des">
+                        Clean Architecture promotes the idea of modular, testable, and maintainable code. It emphasizes separating concerns and defining clear boundaries between system components. 
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h4>What is Platform Engineering?</h4>
+                    <div class="des">
+                        Platform engineering brings self-service capabilities and automated infrastructure operations to improve the developer experience and reduce complexity. 
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h4>5 API Performance Strategies</h4>
+                    <div class="des">
+                        This post discusses 5 strategies for improving API performance, including caching, load balancing, async processing, pagination, and connection pooling.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
