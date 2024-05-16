@@ -19,7 +19,7 @@
         .container{
             position: relative;
             display: flex;
-            width: 80vh;
+            width: 100vh;
             overflow: hidden;
             mask-image: linear-gradient(
                 90deg, transparent,#fff 20%,#fff 80%,transparent
@@ -33,8 +33,11 @@
             animation: animate2 var(--t) linear infinite;
             animation-delay: calc(var(--t)/-2);
         }
-      
-        
+       
+        .container:hover .group{
+            animation-play-state: paused;
+            cursor: pointer;
+        }        
         @keyframes animate{
             from{
                 transform: translate(100%);
